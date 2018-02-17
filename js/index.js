@@ -14,7 +14,7 @@ searchUser.addEventListener('keyup', (e) => {
   if(userText !== ''){
     // Make http call
     github.getUser(userText)
-      .then(data => data.profile.message === 'Not Found' ? alert('User not found') : ui.showProfile(data.profile))
+      .then(data => data.profile.message === 'Not Found' ? ui.showAlert('User not found', 'alert alert-danger') : ui.showProfile(data.profile))
   } else {
     // Clear profile
     ui.clearProfile();
